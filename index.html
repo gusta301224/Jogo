@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Eclipse — Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="game"></canvas>
+
+    <div id="hud">
+        <div class="panel">
+            <div class="title">PROJETO ECLIPSE</div>
+
+            <div class="stat-label"><span>❤️ VIDA</span><span id="healthText">100 / 100</span></div>
+            <div class="bar"><div id="healthBar"></div></div>
+
+            <div class="stat-label"><span>⭐ XP</span><span id="xpText">0 / 100</span></div>
+            <div class="bar"><div id="xpBar"></div></div>
+
+            <div class="stats-grid">
+                <div>Nível <strong id="level">1</strong></div>
+                <div>Abates <strong id="kills">0</strong></div>
+                <div>Onda <strong id="wave">1</strong></div>
+                <div>Inimigos <strong id="enemyCount">0</strong></div>
+                <div>Pontos <strong id="score">0</strong></div>
+                <div>Combo <strong id="combo">x1</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="crosshair"></div>
+
+    <div id="weapon">
+        <div id="weaponName">🔫 Pistola</div>
+        <div class="weapon-sub">
+            <span id="ammoText">12 / ∞</span>
+            <span id="reloadText"></span>
+        </div>
+    </div>
+
+    <div id="controls">
+        <b>WASD</b> mover · <b>Mouse</b> mirar/atirar · <b>R</b> recarregar · <b>1–3</b> trocar arma · <b>ESC</b> pausar
+    </div>
+
+    <div id="levelUp" class="overlay hidden">
+        <div class="modal">
+            <div class="eyebrow">NÍVEL <span id="newLevel">2</span></div>
+            <h1>ESCOLHA UM UPGRADE</h1>
+            <div id="upgradeChoices" class="choices"></div>
+        </div>
+    </div>
+
+    <div id="pause" class="overlay hidden">
+        <div class="modal small">
+            <div class="eyebrow">PROJETO ECLIPSE</div>
+            <h1>PAUSADO</h1>
+            <p>Pressione ESC para continuar.</p>
+        </div>
+    </div>
+
+    <div id="message" class="overlay hidden">
+        <div class="modal">
+            <div class="eyebrow">FIM DA OPERAÇÃO</div>
+            <h1>VOCÊ MORREU</h1>
+            <p>Os inimigos dominaram a área.</p>
+            <div class="final-stats">
+                <span>Onda <strong id="finalWave">1</strong></span>
+                <span>Abates <strong id="finalKills">0</strong></span>
+                <span>Pontos <strong id="finalScore">0</strong></span>
+            </div>
+            <button onclick="restartGame()">Jogar novamente</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
