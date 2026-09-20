@@ -20,10 +20,8 @@ body{cursor:crosshair}canvas{display:block;width:100vw;height:100vh}
 @media(max-width:700px){.panel{width:225px}.choices,.shop-grid{grid-template-columns:1fr}.choice,.shop-item{min-height:105px}#controls{display:none}#weapon{right:10px;bottom:10px}#abilityBar{bottom:70px}.ability{min-width:85px}.boss{width:90vw}}
 
 
-/* =========================================================
-   PROJETO ECLIPSE V2 — CONTROLES MOBILE
-   Este bloco é adicional ao seu style.css atual.
-   ========================================================= */
+
+/* PROJETO ECLIPSE V2 — MOBILE FIX */
 
 html.touch-device,
 html.touch-device body {
@@ -46,37 +44,25 @@ html.touch-device body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  #mobileControls.menu-open {
-    pointer-events: none;
-  }
-
   .touch-stick {
     position: absolute;
-    bottom: 24px;
+    bottom: 22px;
     width: 145px;
     height: 145px;
     pointer-events: auto;
     touch-action: none;
   }
 
-  #moveStick { left: 18px; }
-  #aimStick { right: 18px; }
+  #moveStick { left: 12px; }
+  #aimStick { right: 12px; }
 
   .stick-base {
     position: absolute;
     inset: 15px;
     border: 2px solid rgba(97,218,251,.48);
     border-radius: 50%;
-    background: rgba(5,8,15,.38);
+    background: rgba(5,8,15,.40);
     box-shadow: inset 0 0 30px rgba(0,0,0,.35);
-  }
-
-  .stick-base::before {
-    content: "";
-    position: absolute;
-    inset: 22px;
-    border: 1px solid rgba(255,255,255,.08);
-    border-radius: 50%;
   }
 
   .stick-knob {
@@ -88,7 +74,7 @@ html.touch-device body {
     margin: -29px 0 0 -29px;
     border: 2px solid rgba(255,255,255,.42);
     border-radius: 50%;
-    background: rgba(26,46,69,.88);
+    background: rgba(26,46,69,.90);
     box-shadow: 0 5px 18px rgba(0,0,0,.4);
     will-change: transform;
   }
@@ -97,7 +83,7 @@ html.touch-device body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -2px;
+    bottom: -3px;
     text-align: center;
     color: rgba(220,235,255,.65);
     font-size: 9px;
@@ -106,35 +92,37 @@ html.touch-device body {
     pointer-events: none;
   }
 
+  /* Espaçamento maior entre os botões */
   .touch-actions {
     position: absolute;
-    right: 17px;
-    bottom: 180px;
-    width: 180px;
+    right: 12px;
+    bottom: 174px;
+    width: 225px;
+    height: 190px;
     pointer-events: none;
   }
 
   .touch-btn {
-    border: 1px solid rgba(97,218,251,.35);
-    background: rgba(5,8,15,.78);
+    border: 1px solid rgba(97,218,251,.40);
+    background: rgba(5,8,15,.84);
     color: #eef5ff;
-    box-shadow: 0 7px 22px rgba(0,0,0,.32);
+    box-shadow: 0 7px 22px rgba(0,0,0,.35);
     -webkit-tap-highlight-color: transparent;
     user-select: none;
     touch-action: none;
   }
 
   .touch-btn:active {
-    transform: scale(.94);
-    background: rgba(25,52,78,.95);
+    transform: scale(.93);
+    background: rgba(25,52,78,.98);
   }
 
   #fireBtn {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 88px;
-    height: 88px;
+    width: 92px;
+    height: 92px;
     border-radius: 50%;
     font-size: 12px;
     font-weight: 900;
@@ -144,22 +132,21 @@ html.touch-device body {
 
   #reloadBtn {
     position: absolute;
-    right: 100px;
-    bottom: 5px;
-    width: 52px;
-    height: 52px;
+    right: 112px;
+    bottom: 4px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
-    font-size: 28px;
-    line-height: 1;
+    font-size: 29px;
     pointer-events: auto;
   }
 
   #weaponBtn {
     position: absolute;
-    right: 101px;
-    bottom: 68px;
-    width: 51px;
-    height: 40px;
+    right: 112px;
+    bottom: 78px;
+    width: 54px;
+    height: 42px;
     border-radius: 10px;
     font-size: 8px;
     font-weight: 900;
@@ -169,17 +156,17 @@ html.touch-device body {
   .touch-abilities {
     position: absolute;
     right: 0;
-    bottom: 100px;
+    bottom: 112px;
     display: flex;
-    gap: 6px;
+    gap: 13px; /* mais separados */
     pointer-events: auto;
   }
 
   .touch-abilities .touch-btn {
-    width: 52px;
-    height: 48px;
+    width: 58px;
+    height: 52px;
     padding: 2px;
-    border-radius: 10px;
+    border-radius: 11px;
     font-size: 13px;
     font-weight: 900;
   }
@@ -281,22 +268,6 @@ html.touch-device body {
     padding: 10px;
   }
 
-  .choice .icon,
-  .shop-item .icon {
-    font-size: 24px;
-  }
-
-  .choice h3,
-  .shop-item h3 {
-    margin: 5px 0 3px;
-    font-size: 14px;
-  }
-
-  .choice p,
-  .shop-item p {
-    font-size: 10px;
-  }
-
   #continueWave,
   .modal button {
     min-height: 46px;
@@ -309,9 +280,6 @@ html.touch-device body {
     height: 125px;
   }
 
-  #moveStick { left: 8px; }
-  #aimStick { right: 8px; }
-
   .stick-knob {
     width: 50px;
     height: 50px;
@@ -319,9 +287,13 @@ html.touch-device body {
   }
 
   .touch-actions {
-    right: 8px;
-    bottom: 155px;
-    transform: scale(.9);
+    right: 6px;
+    bottom: 148px;
+    transform: scale(.88);
     transform-origin: bottom right;
+  }
+
+  .touch-abilities {
+    gap: 11px;
   }
 }
